@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#FDF2F8" />
+  <meta name="description" content="这是谐音梗 —— 看图猜词的婚礼小游戏" />
+  <title>这是谐音梗</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <div id="app">
+    <!-- ============ 首页 ============ -->
+    <section id="screen-home" class="screen active">
+      <header class="home-header">
+        <span class="home-luck" aria-hidden="true">囍</span>
+        <p class="home-kicker">WELCOME TO OUR WEDDING</p>
+        <h1 class="game-title">这是谐音梗</h1>
+        <p class="game-subtitle">看图猜词 · 与我们一起开心一下</p>
+      </header>
+
+      <div class="progress-row">
+        <div class="progress-bar" role="progressbar" aria-label="通关进度" aria-valuemin="0" aria-valuemax="100"
+          aria-valuenow="0" id="home-progress">
+          <span id="home-progress-fill"></span>
+        </div>
+        <p class="progress-text"><span id="home-progress-text">0 / 0</span></p>
+      </div>
+
+      <div id="level-grid" class="level-grid"></div>
+
+      <footer class="home-footer">
+        <button id="btn-reset" class="btn btn-ghost btn-small" type="button">重置进度</button>
+      </footer>
+    </section>
+
+    <!-- ============ 游戏页 ============ -->
+    <section id="screen-play" class="screen">
+      <header class="play-header">
+        <button id="btn-back" class="btn btn-icon" type="button" aria-label="返回首页">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+        </button>
+        <span id="play-level" class="play-level">第 1 关</span>
+        <button id="btn-hint" class="btn btn-ghost btn-small" type="button">提示</button>
+      </header>
+
+      <div class="category-chip">
+        <span class="category-label">类别</span>
+        <span class="category-value" id="category-value">—</span>
+      </div>
+
+      <div class="stage">
+        <div class="puzzle-box" id="puzzle-box">
+          <span class="puzzle-badge">谜题</span>
+          <img id="puzzle-img" class="puzzle-img" alt="谜题图片" hidden />
+          <div id="puzzle-empty" class="puzzle-empty" hidden></div>
+        </div>
+
+        <div id="answer-panel" class="answer-panel" hidden>
+          <span class="answer-label">答案</span>
+          <span class="answer-text" id="answer-text"></span>
+        </div>
+      </div>
+
+      <div id="hint-text" class="hint-text" hidden></div>
+
+      <div id="answer-block" class="answer-block" hidden>
+        <p class="answer-desc" id="answer-desc"></p>
+      </div>
+
+      <div class="play-actions">
+        <button id="btn-answer" class="btn btn-primary" type="button">答案</button>
+        <button id="btn-next" class="btn btn-primary" type="button" hidden>下一关</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="assets/js/levels.js"></script>
+  <script src="assets/js/game.js"></script>
+</body>
+
+</html>
